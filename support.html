@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cadence — Support</title>
+<style>
+  :root {
+    --bg: #0E0E10;
+    --surface: #18181B;
+    --divider: #2A2A2E;
+    --text: #E8E8EA;
+    --text-secondary: #8A8A8E;
+    --accent: #A8D068;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  nav.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--divider);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  nav.topnav .brand {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav.topnav .links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+  }
+  nav.topnav .links a:hover,
+  nav.topnav .links a.active { color: var(--accent); }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 28px 96px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 12px;
+  }
+  .intro {
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 36px 0 12px;
+  }
+  details {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+  }
+  details[open] { background: #1F1F22; }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: "›";
+    display: inline-block;
+    margin-right: 10px;
+    color: var(--accent);
+    transition: transform 0.15s ease;
+  }
+  details[open] summary::before { transform: rotate(90deg); }
+  details p { margin: 12px 0 0; color: var(--text-secondary); }
+  details ul {
+    margin: 12px 0 0;
+    padding-left: 22px;
+    color: var(--text-secondary);
+  }
+  details code {
+    background: var(--bg);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  .contact {
+    margin-top: 48px;
+    padding: 24px;
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 12px;
+    text-align: center;
+  }
+  .contact a {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  .contact a:hover { text-decoration: underline; }
+  footer {
+    border-top: 1px solid var(--divider);
+    padding: 32px 28px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  footer a {
+    color: var(--text-secondary);
+    margin: 0 12px;
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="index.html">Cadence</a>
+  <div class="links">
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html" class="active">Support</a>
+  </div>
+</nav>
+
+<main>
+
+  <h1>Support</h1>
+  <p class="intro">
+    Cadence is a free interval-timer app for iOS. The full feature set is
+    unlocked on first launch — there is no Pro version, no paywall, no
+    subscription.
+  </p>
+
+  <h2>Common questions</h2>
+
+  <details>
+    <summary>My Bluetooth strap isn't showing up.</summary>
+    <p>
+      Make sure HR Broadcast is enabled in the strap's companion app
+      (WHOOP, Polar, Wahoo, Garmin). WHOOP straps in particular require
+      the broadcast mode to be toggled on for each session — the app on
+      your phone has a "Broadcast" button.
+    </p>
+    <p>
+      Then in Cadence, open <em>Settings → Heart rate sensor → Scan</em>.
+      Stay within a few meters of the strap. After 30 seconds of no
+      result, Cadence will offer a Scan-again button with a reminder.
+    </p>
+  </details>
+
+  <details>
+    <summary>My workout isn't appearing in Apple Health.</summary>
+    <p>
+      Open the iOS <em>Settings</em> app → <em>Privacy &amp; Security</em>
+      → <em>Health</em> → <em>Cadence</em> and confirm "Workouts" is
+      enabled for write access. If it was previously denied, toggle it on
+      there.
+    </p>
+    <p>
+      Inside Cadence, navigate to the run's History detail and tap
+      <em>Retry</em> on the sync banner. The workout will re-attempt the
+      Apple Health write.
+    </p>
+  </details>
+
+  <details>
+    <summary>The Live Activity isn't showing on my Lock Screen.</summary>
+    <p>
+      Open <em>Settings → Face ID &amp; Passcode</em> → scroll to
+      "Allow access when locked" and confirm Live Activities is on.
+      Inside the iOS Settings app, also check <em>Cadence → Live
+      Activities</em> is enabled.
+    </p>
+    <p>
+      The Lock Screen banner appears as soon as the workout timer
+      starts (after the 3-2-1 preroll). If iOS has been heavily
+      throttling activities recently due to background load, an
+      already-running activity may be hidden — locking and unlocking
+      the device usually surfaces it again.
+    </p>
+  </details>
+
+  <details>
+    <summary>Live HR isn't appearing during a workout.</summary>
+    <p>Cadence needs an HR source. There are two options:</p>
+    <ul>
+      <li>An Apple Watch paired with your iPhone that's feeding heart-rate
+          samples to the Health app, OR</li>
+      <li>A Bluetooth heart-rate strap paired via Cadence's Settings.</li>
+    </ul>
+    <p>
+      The iPhone alone doesn't have a heart-rate sensor. If neither source
+      is available, the in-app chip stays hidden — that's the expected
+      behavior, not a bug.
+    </p>
+  </details>
+
+  <details>
+    <summary>How do I edit a seeded protocol like Norwegian 4×4?</summary>
+    <p>
+      In the Workouts tab, tap on the library row. The editor opens and
+      everything is editable — names, durations, colors, zones. Your
+      edits become a custom workout; the original seed stays in the
+      library unchanged.
+    </p>
+    <p>
+      To restore a seeded protocol you've edited, you can delete it from
+      the list — but note: a deleted seed stays deleted (won't reappear
+      on next launch). If you change your mind, the simplest path is to
+      reinstall the app (your run history is in Apple Health if you've
+      been writing workouts).
+    </p>
+  </details>
+
+  <details>
+    <summary>What zone model should I pick?</summary>
+    <p>
+      <strong>%HRmax</strong> — simplest. Uses just your max HR. Norwegian
+      4×4 was originally defined in %HRmax (Wisløff's paper).
+    </p>
+    <p>
+      <strong>Karvonen (%HRR)</strong> — uses max HR <em>and</em> resting
+      HR. More personal: at the same effort fraction, a runner with low
+      resting HR gets a higher target BPM than one with high resting HR.
+      If you know both numbers and want more accurate zones, this is the
+      pick.
+    </p>
+    <p>
+      <strong>%LTHR</strong> — uses your lactate-threshold HR. Best for
+      runners who have done a recent lactate test or threshold workout
+      and know that number. Skip if you don't.
+    </p>
+  </details>
+
+  <details>
+    <summary>How do I turn off the spoken or haptic cues?</summary>
+    <p>Two layers:</p>
+    <ul>
+      <li><strong>Per workout:</strong> in the workout editor, the
+          "Coaching cues" section has separate toggles for haptic and
+          TTS. Both are off by default.</li>
+      <li><strong>Global:</strong> in Cadence Settings, there are master
+          toggles for haptic and TTS — turning these off disables cues
+          everywhere regardless of per-workout settings.</li>
+    </ul>
+  </details>
+
+  <div class="contact">
+    Still stuck? Email
+    <a href="mailto:williamliu628@gmail.com">williamliu628@gmail.com</a>
+    <br>
+    <small style="color: var(--text-secondary); font-weight: 400;">
+      Replies typically within a few days.
+    </small>
+  </div>
+
+</main>
+
+<footer>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:williamliu628@gmail.com">Contact</a>
+  </div>
+  <div style="margin-top: 12px;">© 2026 William Liu</div>
+</footer>
+
+</body>
+</html>

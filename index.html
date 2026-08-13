@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cadence — Interval timer for runners</title>
+<meta name="description" content="A free interval-protocol timer for iPhone. Norwegian 4×4, Tabata, Yasso 800s, and more — with heart-rate zone coaching. No paywall, no ads, no sign-in.">
+<style>
+  :root {
+    --bg: #0E0E10;
+    --surface: #18181B;
+    --surface-hi: #1F1F22;
+    --divider: #2A2A2E;
+    --text: #E8E8EA;
+    --text-secondary: #8A8A8E;
+    --accent: #A8D068;
+    --flame: #F08040;
+    --crimson: #E84848;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  nav.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--divider);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  nav.topnav .brand {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav.topnav .links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+  }
+  nav.topnav .links a:hover { color: var(--accent); }
+  main.hero {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 96px 28px 64px;
+    text-align: center;
+  }
+  .icon-wrap {
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 32px;
+    border-radius: 28px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+  .icon-wrap svg { display: block; width: 100%; height: 100%; }
+  h1 {
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    margin: 0 0 12px;
+  }
+  .tagline {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin: 0 0 36px;
+    line-height: 1.45;
+  }
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+  .pill {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .pill.lime   { color: var(--accent); border-color: rgba(168,208,104,0.30); }
+  .pill.flame  { color: var(--flame); border-color: rgba(240,128,64,0.30); }
+  .pill.crimson{ color: var(--crimson); border-color: rgba(232,72,72,0.30); }
+  .cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    margin-bottom: 12px;
+  }
+  .cta:hover { background: #B8DC78; }
+  .cta-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+  }
+  section.features {
+    max-width: 920px;
+    margin: 64px auto;
+    padding: 0 28px;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .feature {
+    background: var(--surface);
+    border: 1px solid var(--divider);
+    border-radius: 14px;
+    padding: 22px;
+  }
+  .feature h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+  .feature p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  footer {
+    border-top: 1px solid var(--divider);
+    padding: 32px 28px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  footer a {
+    color: var(--text-secondary);
+    margin: 0 12px;
+  }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="index.html">Cadence</a>
+  <div class="links">
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </div>
+</nav>
+
+<main class="hero">
+
+  <div class="icon-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+      <rect width="1024" height="1024" fill="#0E0E10"/>
+      <circle cx="512" cy="512" r="363" fill="none" stroke="#2A2A2E" stroke-width="47"/>
+      <path d="M 512 149 A 363 363 0 0 1 875 512" fill="none" stroke="#A8D068" stroke-width="47" stroke-linecap="round"/>
+      <circle cx="512" cy="512" r="261" fill="none" stroke="#2A2A2E" stroke-width="47"/>
+      <path d="M 512 251 A 261 261 0 0 1 773 512" fill="none" stroke="#F08040" stroke-width="47" stroke-linecap="round"/>
+      <circle cx="512" cy="512" r="158" fill="none" stroke="#2A2A2E" stroke-width="47"/>
+      <path d="M 512 354 A 158 158 0 0 1 670 512" fill="none" stroke="#E84848" stroke-width="47" stroke-linecap="round"/>
+    </svg>
+  </div>
+
+  <h1>Cadence</h1>
+  <p class="tagline">
+    A free interval-protocol timer for iPhone.<br>
+    Norwegian 4×4 is the hero. No paywall, no ads, no sign-in.
+  </p>
+
+  <div class="pill-row">
+    <span class="pill lime">Norwegian 4×4</span>
+    <span class="pill">Tabata</span>
+    <span class="pill flame">Yasso 800s</span>
+    <span class="pill">Threshold 5×1k</span>
+    <span class="pill crimson">Pyramid</span>
+    <span class="pill">Galloway run-walk</span>
+  </div>
+
+  <a class="cta" href="#">Download on the App Store</a>
+  <p class="cta-meta">Coming soon to iOS 17+.</p>
+
+</main>
+
+<section class="features">
+  <div class="feature-grid">
+    <div class="feature">
+      <h3>Heart-rate zone coaching</h3>
+      <p>%HRmax, Karvonen, or %LTHR. Pick the zone model that matches your physiology — every lap gets evaluated against it.</p>
+    </div>
+    <div class="feature">
+      <h3>Bluetooth strap support</h3>
+      <p>Pair any standard BLE HR sensor — WHOOP, Polar H10, Wahoo TICKR, Garmin HRM-Pro — once from Settings.</p>
+    </div>
+    <div class="feature">
+      <h3>Lock Screen Live Activity</h3>
+      <p>Active interval, countdown, and HR chip on your Lock Screen and Dynamic Island throughout the session.</p>
+    </div>
+    <div class="feature">
+      <h3>Apple Health writeback</h3>
+      <p>Completed sessions write as High-Intensity Interval Training, so they count toward your Activity rings.</p>
+    </div>
+    <div class="feature">
+      <h3>Time-in-zone history</h3>
+      <p>After every run, see a per-lap breakdown of how long you actually spent under, in, and over zone.</p>
+    </div>
+    <div class="feature">
+      <h3>Free forever</h3>
+      <p>The whole feature set unlocks on first launch. No Pro version, no paywall, no ads, no sign-in.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:williamliu628@gmail.com">Contact</a>
+  </div>
+  <div style="margin-top: 12px;">© 2026 William Liu</div>
+</footer>
+
+</body>
+</html>

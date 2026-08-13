@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cadence — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #0E0E10;
+    --surface: #18181B;
+    --divider: #2A2A2E;
+    --text: #E8E8EA;
+    --text-secondary: #8A8A8E;
+    --accent: #A8D068;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+  }
+  nav.topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--divider);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  nav.topnav .brand {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav.topnav .links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+  }
+  nav.topnav .links a:hover,
+  nav.topnav .links a.active { color: var(--accent); }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 56px 28px 96px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: 0 0 4px;
+  }
+  .meta {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 36px;
+  }
+  h2 {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 36px 0 12px;
+  }
+  p { margin: 0 0 14px; }
+  ul {
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent); }
+  a:hover { text-decoration: underline; }
+  code {
+    background: var(--surface);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  footer {
+    border-top: 1px solid var(--divider);
+    padding: 32px 28px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+  footer a {
+    color: var(--text-secondary);
+    margin: 0 12px;
+    text-decoration: none;
+  }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <a class="brand" href="index.html">Cadence</a>
+  <div class="links">
+    <a href="privacy.html" class="active">Privacy</a>
+    <a href="support.html">Support</a>
+  </div>
+</nav>
+
+<main>
+
+  <h1>Privacy Policy</h1>
+  <div class="meta">Effective 16 June 2026.</div>
+
+  <p>
+    Cadence is an iOS application that stores all data on your device. The
+    developer does not operate a backend, does not transmit any of your
+    data off your device, and does not have access to any of your
+    information.
+  </p>
+
+  <h2>Data Collected by the Developer</h2>
+  <p>None.</p>
+  <!-- MAINTAINER NOTE (not shown to users): "None" is accurate only while
+       the app keeps all data on-device. GPS routes currently go only to
+       on-device Apple Health / local storage and are never transmitted. If
+       the app ever stores or transmits location (or any user data)
+       off-device — a backend, cloud sync/backup, route sharing, analytics —
+       this policy MUST be updated to disclose it, and so must
+       Shared/PrivacyInfo.xcprivacy and the App Store Connect privacy label.
+       Keep this file and its published copy in sync. -->
+
+
+  <h2>Data Stored on Your Device</h2>
+  <ul>
+    <li>Your interval workouts (the seeded library plus any you create or edit).</li>
+    <li>Your run history — per-lap actual durations, outcomes, and (when an
+        HR source is available) per-lap heart-rate samples recorded at
+        roughly 0.2&nbsp;Hz.</li>
+    <li>Your heart-rate profile: maximum HR, optional resting HR, optional
+        lactate-threshold HR, and your preferred zone model. Only present if
+        you set them in Settings or the on-boarding wizard.</li>
+    <li>The identifier of a Bluetooth heart-rate sensor you have paired
+        (if any), so the app can reconnect automatically.</li>
+    <li>Your preferences — haptic toggle, TTS toggle, voice selection,
+        notification permissions you have granted, etc.</li>
+  </ul>
+  <p>
+    This data lives only in your device's local storage. Removing the app
+    deletes it.
+  </p>
+
+  <h2>Apple Health</h2>
+  <p>
+    With your explicit permission, Cadence integrates with Apple Health
+    via the HealthKit framework:
+  </p>
+  <ul>
+    <li><strong>Reading</strong> your live heart rate while a workout is in
+        progress, to display it on-screen and color-code the in-app zone
+        chip.</li>
+    <li><strong>Writing</strong> completed workouts to Apple Health as
+        <code>HKWorkoutActivityType.highIntensityIntervalTraining</code> so
+        they contribute to your Activity rings. When you have paired a
+        Bluetooth heart-rate sensor and that sensor produced samples
+        during the run, those samples are attached to the workout so its
+        HR chart in Health is populated.</li>
+  </ul>
+  <p>
+    These read and write operations are mediated entirely by Apple's
+    HealthKit framework. The data never leaves your device in any form the
+    developer can observe.
+  </p>
+
+  <h2>Bluetooth</h2>
+  <p>
+    With your explicit permission, Cadence connects to a Bluetooth
+    heart-rate sensor advertising the standard Heart Rate Service
+    (<code>0x180D</code>). The information exchanged is limited to
+    heart-rate samples (and the necessary handshake), used only for live
+    display in the app and for the optional Apple Health writeback
+    described above. No information is transmitted off your device.
+  </p>
+  <p>
+    Cadence does not declare the iOS <code>bluetooth-central</code>
+    background mode by design — if you background the app mid-workout,
+    sensor sample collection pauses until you bring the app forward.
+  </p>
+
+  <h2>Notifications</h2>
+  <p>
+    With your explicit permission, Cadence schedules local notifications
+    that fire on each lap boundary when the app is backgrounded mid-workout.
+    No remote push tokens are issued; no notifications come from a server.
+  </p>
+
+  <h2>Analytics, Advertising, Tracking</h2>
+  <p>
+    None. Cadence integrates no analytics SDK, no advertising SDK, and no
+    third-party tracking of any kind.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    Cadence does not knowingly collect information from children. Because
+    it does not collect any information at all, the framework simply does
+    not apply.
+  </p>
+
+  <h2>Changes to this Policy</h2>
+  <p>
+    If this policy ever changes, a revised version will appear at this URL
+    with an updated effective date.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions, concerns, or feedback:
+    <a href="mailto:williamliu628@gmail.com">williamliu628@gmail.com</a>
+  </p>
+
+</main>
+
+<footer>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="mailto:williamliu628@gmail.com">Contact</a>
+  </div>
+  <div style="margin-top: 12px;">© 2026 William Liu</div>
+</footer>
+
+</body>
+</html>
