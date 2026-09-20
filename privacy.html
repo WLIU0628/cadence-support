@@ -110,7 +110,7 @@
 <main>
 
   <h1>Privacy Policy</h1>
-  <div class="meta">Effective 16 June 2026.</div>
+  <div class="meta">Effective 20 September 2026.</div>
 
   <p>
     Cadence is an iOS application that stores all data on your device. The
@@ -120,7 +120,10 @@
   </p>
 
   <h2>Data Collected by the Developer</h2>
-  <p>None.</p>
+  <p>
+    None — including your location. Cadence has no backend to send
+    anything to.
+  </p>
   <!-- MAINTAINER NOTE (not shown to users): "None" is accurate only while
        the app keeps all data on-device. GPS routes currently go only to
        on-device Apple Health / local storage and are never transmitted. If
@@ -142,6 +145,8 @@
         you set them in Settings or the on-boarding wizard.</li>
     <li>The identifier of a Bluetooth heart-rate sensor you have paired
         (if any), so the app can reconnect automatically.</li>
+    <li>For outdoor runs: the GPS route you ran, along with the distance,
+        pace, per-kilometre splits, and elevation gain derived from it.</li>
     <li>Your preferences — haptic toggle, TTS toggle, voice selection,
         notification permissions you have granted, etc.</li>
   </ul>
@@ -149,6 +154,27 @@
     This data lives only in your device's local storage. Removing the app
     deletes it.
   </p>
+
+  <h2>Location</h2>
+  <p>
+    With your explicit permission, Cadence uses your device's location
+    during an <strong>outdoor run</strong> to measure distance and pace,
+    to estimate elevation gain, and to record the route you ran.
+  </p>
+  <ul>
+    <li>Permission is requested as <strong>While Using the App</strong>.
+        Cadence never asks for always-on location access.</li>
+    <li>Location updates continue while a run is in progress and your
+        screen is locked — that is what lets an outdoor run keep tracking
+        in your pocket. iOS displays its own location indicator while
+        this is happening. Tracking stops when the run ends.</li>
+    <li>A session is only saved as an outdoor run once it has covered at
+        least 200 metres. Below that, no route, distance, or pace is
+        stored with it.</li>
+    <li>Your route is written to your device's local storage and, with
+        your Apple Health permission, to Apple Health (see below). It
+        goes nowhere else — there is no server to send it to.</li>
+  </ul>
 
   <h2>Apple Health</h2>
   <p>
@@ -165,6 +191,9 @@
         Bluetooth heart-rate sensor and that sensor produced samples
         during the run, those samples are attached to the workout so its
         HR chart in Health is populated.</li>
+    <li><strong>Writing</strong> the route of an outdoor run to Apple
+        Health as a workout route, so the run appears on the map in
+        Health alongside the workout.</li>
   </ul>
   <p>
     These read and write operations are mediated entirely by Apple's
@@ -187,11 +216,32 @@
     sensor sample collection pauses until you bring the app forward.
   </p>
 
+  <h2>Photos</h2>
+  <p>
+    Cadence can render a shareable card from a run — a route map, an
+    interval breakdown, a personal record, or a weekly summary. If you
+    choose to save one, Cadence asks for permission to
+    <strong>add</strong> photos to your library. That permission is
+    add-only: Cadence cannot read, browse, or delete anything already in
+    your library. If you instead share a card to another app, the image
+    is handed to that app, and what happens to it from there is governed
+    by that app's privacy policy rather than this one.
+  </p>
+
   <h2>Notifications</h2>
   <p>
-    With your explicit permission, Cadence schedules local notifications
-    that fire on each lap boundary when the app is backgrounded mid-workout.
-    No remote push tokens are issued; no notifications come from a server.
+    With your explicit permission, Cadence schedules local notifications:
+  </p>
+  <ul>
+    <li>Lap-boundary alerts, when the app is backgrounded mid-workout.</li>
+    <li>A reminder for your next incomplete training-plan session, if you
+        are following a plan.</li>
+    <li>An optional weekly recap on Sunday evenings, offering a summary
+        card of the week. This can be turned off in Settings.</li>
+  </ul>
+  <p>
+    All of these are scheduled on your device. No remote push tokens are
+    issued; no notifications come from a server.
   </p>
 
   <h2>Analytics, Advertising, Tracking</h2>
